@@ -1,20 +1,16 @@
 name: Hello World
-on: push
+on: 
+  push:
+    branches:
+      - main
+      - develop
+      - feature/*
+  pull_request:
+    branches:
+      - main
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Build Step
         run: echo "This is a Demo Build"
-  test:
-    runs-on: ubuntu-latest
-    needs: build
-    steps:
-      - name: Test Step
-        run: echo "Running test cases"
-  deploy:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Deploy Step
-        run: echo "Deploying Demo App"
