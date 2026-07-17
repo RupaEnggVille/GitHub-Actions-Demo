@@ -6,12 +6,6 @@ on:
         description: Choose the environment to deploy
         required: true
         default: development
-        type: choice
-        options:
-          - development
-          - staging
-          - testing
-          - production
 jobs:
   input-parameter:
     runs-on: ubuntu-latest
